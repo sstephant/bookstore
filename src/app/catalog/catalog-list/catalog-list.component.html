@@ -1,0 +1,29 @@
+<table>
+  <thead>
+  <tr>
+    <th colspan="2">Titre</th>
+    <th>Auteur</th>
+    <th>Prix unitaire HT</th>
+    <th>Note</th>
+    <th>Quantité</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books$ | async; trackBy: getBbookId; odd as isOdd" [class.odd]="isOdd" >
+    <td><a [routerLink]="routeUrlService.getCatalogBook(book)"><img [src]="book.image" [title]="book.title"></a></td>
+    <td><a [routerLink]="routeUrlService.getCatalogBook(book)">{{book.title | uppercase}}</a></td>
+    <td>{{book.author}}</td>
+    <td class="right">{{book.price | currency:'EUR'}}</td>
+    <td class="right">{{book.rating}}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="4">Total</td>
+    <td class="right"></td>
+    <td class="right"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tfoot>
+</table>

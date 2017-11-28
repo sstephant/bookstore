@@ -1,0 +1,167 @@
+.right
+  text-align: right
+  padding-right: 3em
+
+h1
+  margin-left: 1em
+  border-left: 10px solid black
+  padding-left: 5px
+
+h2
+  font-size: 1.2em
+  padding-left: 1em
+  margin: 2em 1em 1em 1em
+
+form
+  margin: 0.5em
+
+label
+  margin-right: 0.5em
+
+select
+  margin: 0.3em
+
+table
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+  background: #fff
+  border-collapse: collapse
+  text-align: left
+  margin: 20px
+  th
+    font-size: 1.1em
+    font-weight: normal
+    color: #5e001f
+    border-bottom: 2px solid #6678b1
+    padding: 0.5em 1em
+    vertical-align: top
+
+  td
+    color: #669
+    border-bottom: 1px dotted #ccc
+    padding: 0.5em 1em
+    min-height: 5px
+    vertical-align: middle
+
+  tr.odd
+    background-color: aliceblue
+
+  tr:hover td
+    color: #005
+
+  tr.big
+    td
+      font-weight: bold
+
+  tfoot td
+    color: #5e001f
+    border-top: 2px solid #aaa
+    border-bottom: none
+    padding: 0.5em 1em
+
+  input
+    width: 3em
+
+.bar-chart
+  background-color: #000055
+  min-height: 5px
+  max-width: 100px
+  min-width: 0
+
+input
+  border: 1px solid black
+  box-shadow: black 2px 2px 2px
+
+button, input[type=submit], input[type=reset]
+  box-shadow: none
+  background-color: lightgreen
+  &:hover
+    background-color: green
+  &:disabled
+    font-style: italic
+    background-color: #aaaaaa
+
+button.btn-alert
+  background-color: lightcoral
+  &:hover
+    background-color: red
+
+input
+  .ng-dirty.ng-invalid
+    box-shadow: red 2px 2px 2px
+  .ng-dirty.ng-valid
+    box-shadow: green 2px 2px 2px
+
+$menu-backround-color: #6678b1
+nav
+  menu
+    background-color: $menu-backround-color
+    menuitem
+      a
+        border-left: 2px solid white
+        padding-left: 2px
+        display: inline-block
+        color: white
+        text-decoration: none
+        &.active-link
+          background-color: adjust_hue($menu-backround-color, 30%)
+          transition-duration: 500ms
+
+
+
+$fontFamily: Lucida Grande, Lucida Sans, Arial, sans-serif;
+$fontSize: 1em;
+$borderRadius: 6px;
+$disabledOpacity: 0.35;
+
+//Header
+$headerBorderWidth: 1px;
+$headerBorderColor: #aed0ea;
+$headerBgColor: #deedf7;
+$headerTextColor: #222222;
+$headerFontWeight: bold;
+$headerIconTextColor: #222222;
+
+//Content
+$contentBorderWidth: 1px;
+$contentBorderColor: #dddddd;
+$contentBgColor: #f2f5f7;
+$contentTextColor: #362b36;
+
+//Default State
+$stateDefaultBorderWidth: 1px;
+$stateDefaultBorderColor: #aed0ea;
+$stateDefaultBgColor: #d7ebf9;
+$stateDefaultTextColor: #2779aa;
+
+//Active State
+$stateActiveBorderColor: #2694e8;
+$stateActiveBgColor: #3baae3;
+$stateActiveTextColor: #ffffff;
+
+//Highlight State
+$stateHighlightBorderColor: #f9dd34;
+$stateHighlightBgColor: #ffef8f;
+$stateHighlightTextColor: #363636;
+
+//Focus State
+$stateFocusBorderColor: #74b2e2;
+$stateFocusBgColor: #e4f1fb;
+$stateFocusTextColor: #0070a3;
+
+//Error State
+$stateErrorBorderColor: #cd0a0a;
+$stateErrorBgColor: #cd0a0a;
+$stateErrorTextColor: #ffffff;
+
+//Hover State
+$stateHoverBorderColor: #74b2e2;
+$stateHoverBgColor: #e4f1fb;
+$stateHoverTextColor: #0070a3;
+
+//Forms
+$inputBgColor: #ffffff;
+$inputTextColor: #222222;
+$invalidInputBorderColor: #cd0a0a;
+$inputGroupTextColor: #2779aa;
+
+@import './assets/styles/_theme';

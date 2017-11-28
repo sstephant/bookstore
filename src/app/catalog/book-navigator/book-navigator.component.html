@@ -1,0 +1,11 @@
+<ng-template #noPrevious><span class="disabled">◀</span>︎</ng-template>
+<ng-template #noNext><span class="disabled">▶</span>︎</ng-template>
+<p>
+  <a *ngIf="bookNav.previous as previous; else noPrevious"
+     [routerLink]="routeUrlService.getCatalogBook(previous)">◀︎</a>
+
+  <span>{{bookNav.index + 1 | number: digit()}} / {{bookNav.count}}</span>
+
+  <a *ngIf="bookNav.next as next; else noNext"
+     [routerLink]="routeUrlService.getCatalogBook(next)">▶︎</a>
+</p>

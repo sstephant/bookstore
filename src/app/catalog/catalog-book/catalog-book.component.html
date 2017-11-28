@@ -1,0 +1,30 @@
+<ng-template #loading>
+  <p>Chargement en cours...</p>>
+</ng-template>
+<ng-container *ngIf="bookNav$ | async as bookNav; else loading">
+  <app-book-navigator [bookNav]="bookNav"></app-book-navigator>
+  <table *ngIf="bookNav?.book as book">
+    <tr><td><p><img [src]="bookNav?.book?.image" [title]="bookNav?.book?.title"></p></td></tr>
+    <tr>
+      <th>Titre</th>
+      <td>{{bookNav?.book?.title}}</td>
+    </tr>
+    <tr>
+      <th>Auteur</th>
+      <td>{{bookNav?.book?.author}}</td>
+    </tr>
+    <tr>
+      <th>Prix</th>
+      <td>{{bookNav?.book?.price}}</td>
+    </tr>
+    <tr>
+      <th>Note</th>
+      <td>{{bookNav?.book?.rating}}</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td [innerHTML]="bookNav?.book?.description"></td>
+    </tr>
+  </table>
+  <button (click)="back()">Catalogue</button>
+</ng-container>

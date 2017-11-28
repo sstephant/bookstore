@@ -1,0 +1,11 @@
+<nav>
+  <menu>
+    <menuitem><a [routerLink]="routeUrlService.getCatalog()" routerLinkActive="active-link">Catalogue</a></menuitem>
+  </menu>
+</nav>
+<nav>
+  <menu>
+    <menuitem><a [routerLink]="routeUrlService.getCatalogList()" routerLinkActive="active-link">Catalogue</a></menuitem>
+  </menu>
+</nav>
+<p-menubar [model]="items"></p-menubar>
