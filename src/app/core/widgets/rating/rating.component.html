@@ -1,0 +1,9 @@
+<span (onmouseleave)="onMouseLeave()">
+<span *ngFor="let filled of stars; index as i"
+    (click)="onClick(i)"
+    (mouseenter)="onMouseEnter(i)"
+>
+  <span *ngIf="filled">★</span>
+  <span *ngIf="!filled">☆</span>
+</span>
+</span>

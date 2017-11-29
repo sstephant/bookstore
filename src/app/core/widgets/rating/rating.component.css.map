@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACF,MAAM,EAAE,OAAO;EACf,UAAO;IACL,WAAW,EAAE,MAAM",
+"sources": ["rating.component.sass"],
+"names": [],
+"file": "rating.component.css"
+}

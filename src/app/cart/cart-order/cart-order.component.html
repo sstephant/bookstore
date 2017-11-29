@@ -1,0 +1,40 @@
+<form #formInfo="ngForm" [class.submitted]="formInfo.submitted"
+      (submit)="save()">
+  <fieldset>
+    <legend>Votre identite</legend>
+    <p><label> Prenom<input name="lastname" type="text"
+                            [(ngModel)]="data.identity.lastname"></label></p>
+    <p><label> Nom<input #lastname="ngModel" name="firstname"
+                         type="text" minlength="2" required
+                         [(ngModel)]="data.identity.firstname"></label>
+      <app-error [control]="lastname" [form]="formInfo"></app-error>
+    </p>
+    <p><label> Email<input name="email" required type="email" minlength="5"
+                           [(ngModel)]="data.identity.email"></label></p>
+    <p><label> Tel<input name="tel" type="tel"
+                         [(ngModel)]="data.identity.phone"></label></p>
+  </fieldset>
+  <fieldset>
+    <legend>Adressse</legend>
+    <p><label> Voie<input name="street" type="text"
+                          [(ngModel)]="data.adress.street"></label></p>
+    <p><label> Code postal<input #zipcode="ngModel" name="zipcode" type="text"
+                                 pattern="[0-9]{4,5}" required
+                                 [(ngModel)]="data.adress.zipcode"></label>
+      <app-error [control]="zipcode" [form]="formInfo"></app-error>
+    </p>
+    <p><label> Ville<input name="city" type="text"
+                           [(ngModel)]="data.adress.city"></label></p>
+    <p><label> Pays<input name="country" type="text"
+                          [(ngModel)]="data.adress.country"></label></p>
+  </fieldset>
+  <p>
+    <button pButton [disabled]="formInfo.invalid && formInfo.submitted" type="submit" label="Envoyer"></button>
+  </p>
+</form>
+<section class="debug">
+  <button type="button" (click)="log()">Dump formInfo</button>
+  <pre>
+    {{ data | json }}
+  </pre>
+</section>

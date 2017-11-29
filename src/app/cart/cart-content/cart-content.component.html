@@ -1,0 +1,27 @@
+<p *ngIf="cartService.isEmpty()">Votre panier est vide</p>
+<table *ngIf="!cartService.isEmpty()">
+  <thead>
+  <tr>
+    <th>Produit</th>
+    <th>Prix</th>
+    <th>Quantite</th>
+    <th>Total</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cartItem of cartService.cartItems">
+    <td [innerHTML]="cartItem.item.title"></td>
+    <td>{{cartItem.item.price | currency: 'EUR' }}</td>
+    <td><input type="number" min="0" step="1" [(ngModel)]="cartItem.quantity"></td>
+    <td>{{cartItem.amount() | currency: 'EUR'}}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="2"></td>
+    <td>Total</td>
+    <td>{{cartService.totalTTC() | currency: 'EUR'}}</td>
+  </tr>
+  </tfoot>
+</table>
+<app-order-button-component></app-order-button-component>

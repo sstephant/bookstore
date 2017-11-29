@@ -1,0 +1,13 @@
+<span class="error"
+      *ngIf="control.invalid && (control.touched || control.submitted)">
+
+  <span *ngIf="control.touched && control.hasError('required')">
+        Ce champ est obligatoire
+  </span>
+  <span *ngIf="control.touched && control.hasError('pattern')">
+        Ce champ n'est pas au format attendu
+  </span>
+  <span *ngIf="control.touched && control.hasError('minlength')">
+        Il faut au moins {{control.error.minLength.requiredLength}}
+  </span>
+</span>

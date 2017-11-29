@@ -4,6 +4,8 @@ import {Book} from '../../core/model/book.model';
 import {CatalogService} from '../../core/services/catalog.service';
 import {RouteUrlService} from '../../core/services/route-url.service';
 import {Title} from '@angular/platform-browser';
+import {CartService} from '../../core/services/cart.service';
+import {ActionService} from '../../core/services/action.service';
 
 @Component({
   selector: 'app-catalog-list',
@@ -15,7 +17,8 @@ export class CatalogListComponent implements OnInit {
 
   constructor(private catalogService: CatalogService,
               private title: Title,
-              public routeUrlService: RouteUrlService) {
+              public routeUrlService: RouteUrlService,
+              public action: ActionService) {
   }
 
   /**

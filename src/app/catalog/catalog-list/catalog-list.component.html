@@ -1,3 +1,4 @@
+<app-small-cart></app-small-cart>
 <table>
   <thead>
   <tr>
@@ -5,7 +6,7 @@
     <th>Auteur</th>
     <th>Prix unitaire HT</th>
     <th>Note</th>
-    <th>Quantité</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -14,16 +15,11 @@
     <td><a [routerLink]="routeUrlService.getCatalogBook(book)">{{book.title | uppercase}}</a></td>
     <td>{{book.author}}</td>
     <td class="right">{{book.price | currency:'EUR'}}</td>
-    <td class="right">{{book.rating}}</td>
+    <td class="right"><app-rating [(value)]="book.rating"></app-rating>
+    </td>
+    <td><app-buy-button [item]="book"></app-buy-button></td>
   </tr>
   </tbody>
   <tfoot>
-  <tr>
-    <td colspan="4">Total</td>
-    <td class="right"></td>
-    <td class="right"></td>
-    <td></td>
-    <td></td>
-  </tr>
   </tfoot>
 </table>

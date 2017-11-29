@@ -1,0 +1,6 @@
+<p>
+  <img *ngIf="cart.isEmpty()" src="assets/img/cart-empty.png">
+  <img *ngIf="!cart.isEmpty()" src="assets/img/cart-loaded.png">
+  {{cart.cartItems.length}} art.
+  {{cart.totalTTC() | currency: 'EUR'}}
+</p>

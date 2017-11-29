@@ -1,4 +1,6 @@
-export interface Book {
+import { Item } from './cart.model';
+
+export interface Book extends Item {
   _id?: {
     $oid: string;
   };

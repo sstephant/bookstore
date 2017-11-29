@@ -31,4 +31,23 @@ export class RouteUrlService {
   getCatalog() {
     return '/catalog';
   }
+  /**
+   *
+   * @returns {string}
+   */
+  getCart() {
+    return '/cart';
+  } /**
+   *
+   * @returns {string}
+   */
+  getCartContent() {
+    return '/cart/content';
+  } /**
+   *
+   * @returns {string}
+   */
+  getCartOrder() {
+    return '/cart/order';
+  }
 }
